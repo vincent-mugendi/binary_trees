@@ -16,6 +16,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	/* Enqueue the root node */
 	binary_tree_t *queue[100];
 	int front = 0, rear = -1;
+
 	queue[++rear] = (binary_tree_t *)tree;
 
 	/* Traverse the tree using level-order traversal */
@@ -23,9 +24,10 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	{
 		/* Dequeue a node and call the function */
 		binary_tree_t *current = queue[front++];
+
 		func(current->n);
 
-		/* Enqueue the left child if it exists *//* Enqueue the left child if it exists */
+		/* Enqueu the left child if it exists */
 		if (current->left != NULL)
 			queue[++rear] = current->left;
 
